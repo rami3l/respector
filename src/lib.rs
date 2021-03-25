@@ -1,14 +1,14 @@
-//! A helper to add inspection to Option and Result types.
+//! An extension to add [`inspect`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.inspect) method to [`Option`] and [`Result`] types.
 
 pub use self::prelude::*;
 
-mod prelude {
+pub mod prelude {
     pub trait OptionInspector<T> {
         /// Does something with the contained [`Some`] value element of an [`Option`], passing the value on.
         ///
         /// # Examples
         /// ```rust
-        /// use respector::OptionInspector;
+        /// use respector::prelude::*;
         ///
         /// assert_eq!(Some(10).inspect(|x| println!("Some({})", x)), Some(10)); // Prints `Some(10)`.
         /// assert_eq!(None::<i32>.inspect(|x| println!("Some({})", x)), None); // Prints nothing.
@@ -30,15 +30,15 @@ mod prelude {
         ///
         /// # Examples
         /// ```rust
-        /// use respector::ResultInspector;
+        /// use respector::prelude::*;
         ///
         /// assert_eq!(
         ///     Ok::<_, ()>(10).inspect(|x| println!("Ok({})", x)),
-        ///     Ok::<_, ()>(10)
+        ///     Ok(10)
         /// ); // Prints `Ok(10)`.
         /// assert_eq!(
         ///     Err::<(), _>(10).inspect(|x| println!("Ok({:?})", x)),
-        ///     Err::<(), _>(10)
+        ///     Err(10)
         /// ); // Prints nothing.
         /// ```
         fn inspect<F: FnMut(&T)>(self, f: F) -> Result<T, E>;
@@ -47,15 +47,15 @@ mod prelude {
         ///
         /// # Examples
         /// ```rust
-        /// use respector::ResultInspector;
+        /// use respector::prelude::*;
         ///
         /// assert_eq!(
         ///     Err::<(), _>(10).inspect_err(|x| println!("Err({})", x)),
-        ///     Err::<(), _>(10)
+        ///     Err(10)
         /// ); // Prints `Err(10)`.
         /// assert_eq!(
         ///     Ok::<_, ()>(10).inspect_err(|x| println!("Err({:?})", x)),
-        ///     Ok::<_, ()>(10)
+        ///     Ok(10)
         /// ); // Prints nothing.
         /// ```
         fn inspect_err<F: FnMut(&E)>(self, f: F) -> Result<T, E>;
