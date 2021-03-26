@@ -9,7 +9,7 @@ An extension to add [`inspect`](https://doc.rust-lang.org/std/iter/trait.Iterato
 
 ## Usage
 
-````rust
+```rust
 use respector::prelude::*;
 
 assert_eq!(
@@ -27,4 +27,3 @@ assert_eq!(
     Err(10)
 ); // Prints `Err(10)`.
 ```
-````
