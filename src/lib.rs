@@ -9,7 +9,6 @@ pub mod prelude {
         /// # Examples
         /// ```rust
         /// use respector::prelude::*;
-        ///
         /// assert_eq!(Some(10).inspect(|x| println!("Some({})", x)), Some(10)); // Prints `Some(10)`.
         /// assert_eq!(None::<i32>.inspect(|x| println!("Some({})", x)), None); // Prints nothing.
         /// ```
@@ -31,7 +30,6 @@ pub mod prelude {
         /// # Examples
         /// ```rust
         /// use respector::prelude::*;
-        ///
         /// assert_eq!(
         ///     Ok::<_, ()>(10).inspect(|x| println!("Ok({})", x)),
         ///     Ok(10)
@@ -48,7 +46,6 @@ pub mod prelude {
         /// # Examples
         /// ```rust
         /// use respector::prelude::*;
-        ///
         /// assert_eq!(
         ///     Err::<(), _>(10).inspect_err(|x| println!("Err({})", x)),
         ///     Err(10)
