@@ -2,12 +2,13 @@
 authors = ["rami3l <rami3l@outlook.com>"]
 edition = "2018"
 name = "respector"
-version = "0.1.1"
+version = "0.1.2"
 
 description = "An extension to add inspect method to Option and Result types."
 homepage = "https://github.com/rami3l/respector"
 keywords = ["option", "result", "inspect"]
 repository = "https://github.com/rami3l/respector"
+categories = ["no-std", "rust-patterns"]
 
 license = "MIT"
 readme = "README.md"
