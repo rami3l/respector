@@ -1,7 +1,7 @@
 //! An extension to add [`inspect`](https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.inspect) method to [`Option`] and [`Result`] types.
+//!
 //! This allows doing something with the value contained in a `Some`, an `Ok` (with `inspect`) or an `Err` (with `inspect_err`) while passing the value on,
 //! which can be useful for introducing side effects in debugging, logging, etc.
-//!
 //!
 //! ## Examples
 //! ```rust
