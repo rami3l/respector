@@ -1,5 +1,9 @@
 # respector
 
+**Warning: Deprecated in favor of https://github.com/rust-lang/rust/issues/91345.**
+
+---
+
 [![Downloads](https://img.shields.io/crates/d/respector)](https://crates.io/crates/respector)
 [![License](https://img.shields.io/crates/l/respector)](./LICENSE)
 [![crates.io](https://img.shields.io/crates/v/respector?logo=rust)](https://crates.io/crates/respector)
